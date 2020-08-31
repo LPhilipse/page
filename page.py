@@ -18,6 +18,12 @@ def page(insuit, nation, suitname, sort, suit, alternative, original, altsuit):
   name = input("name:")
   caption = input("caption:")
   itemtype = input ("type:")
+  if itemtype.lower() == "left hand ornament" or itemtype.lower() == "left bracelet":
+    itemtype = "Accessory, Bracelet (Left)"
+  if itemtype.lower() == "right hand ornament" or itemtype.lower() == "right bracelet":
+    itemtype = "Accessory, Bracelet (Right)" 
+  if itemtype.lower() == "hair ornament" or itemtype.lower() == "veil" or itemtype.lower() == "hairpin" or itemtype.lower() == "ears" or itemtype.lower() == "earrings" or itemtype.lower() == "necklace" or itemtype.lower() == "scarf" or itemtype.lower() == "bracelet (right)" or itemtype.lower() == "bracelet (left)" or itemtype.lower() == "gloves" or itemtype.lower() == "handheld (left)" or itemtype.lower() == "handheld (right)" or itemtype.lower() == "handheld (both)" or itemtype.lower() == "waist" or itemtype.lower() == "face" or itemtype.lower() == "brooch" or itemtype.lower() =="tattoo" or itemtype.lower() =="wings" or itemtype.lower() == "tail" or itemtype.lower() == "foreground" or itemtype.lower() == "background" or itemtype.lower() == "ground" or itemtype.lower() == "head ornament" or itemtype.lower() == "skin":
+    itemtype = "Accessory, " + itemtype
   style = input("style, if multiple, just put spaces inbetween:")
   styl = ""
   if (style !=''):
@@ -848,7 +854,7 @@ def page(insuit, nation, suitname, sort, suit, alternative, original, altsuit):
     print ("[[Category:Animated]]")
   else:
     print("[[Category:"+ rarity + " Heart]]")
-  if(obcust == ""):
+  if(obcust == "" and cust == "y"):
     print("[[Category:Customizable]]")
   if(evolves == "y"):
     print ("[[Category:Evolvable]]")
