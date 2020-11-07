@@ -215,7 +215,7 @@ def page(insuit, nation, suitname, sort, suit, alternative, original, altsuit):
           obt = obt + "<br/>Stage " + stage +" (" + level + ")"
         if str(level+ " Drop") not in cat:
           cat.append(str(level + " Drop"))
-        intro = intro + "{{Stages|" + stage + "}}("+ level +")"
+        intro = intro + "{{Stages|" + stage + "}} ("+ level +")"
         if(i<int(num)-1):
           intro = intro + ", "
       intro = intro + "."
@@ -605,7 +605,7 @@ def page(insuit, nation, suitname, sort, suit, alternative, original, altsuit):
   print("{{Clothing\n|image = File:" + name + ".png\n|imagewidth = 180\n|caption ="
   + caption + "\n|type = "+itemtype + "\n|style = " + styl +
   "\n|attributes = {{A|"+attribute1 + "}} {{A|" + attribute2 +"}}\n|rarity = {{H|"+rarity+ "}}\n|color = "
-  + color + "\n|wardrobe # = "+ number + "\n|how to obtain = "+ obt +"\n}}")
+  + color + "\n|wardrobe nr = "+ number + "\n|how to obtain = "+ obt +"\n}}")
   print( "'''"+ name + "''' "+ intro)
 
   print("==Appearance==\n"+ appearance)
