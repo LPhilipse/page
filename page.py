@@ -118,7 +118,7 @@ def page(insuit, nation, suitname, sort, suit, alternative, original, altsuit):
   cat = []
   ev = "n"
   for i in range (0,int(nrobt)):
-    obtain = input("enter an obtainment method, like event, log in, stage, store, pav, crafting, customization, recharge, evolution, reconstruction, monthly, achievement, styling gift box:")
+    obtain = input("enter an obtainment method, like event, log in, stage, store, pav, crafting, customization, recharge, evolution, reconstruction, monthly, achievement, styling gift box, mail, code:")
 
     if(obtain.lower()== "event"):
       event = input("what event?")
@@ -140,6 +140,30 @@ def page(insuit, nation, suitname, sort, suit, alternative, original, altsuit):
       else:
         obt = obt + "<br/>Log-in Event"
       cat.append("Log-in Event")
+    elif(obtain.lower()== "mail"):
+      pack = input("part of pack? if yes, name?")
+      if pack == "":
+        intro= intro + "could be obtained from a mailbox gift."
+      else:
+        intro= intro + "could be obtained from a mailbox gift as part of the [[" + pack +"]]."
+      ev = "y"
+      if obt == "":
+        obt ="Mailbox gift"
+      else:
+        obt = obt + "<br/>Mailbox gift"
+      cat.append("Mailbox Gift")
+    elif(obtain.lower()== "code"):
+      pack = input("part of pack? if yes, name?")
+      if pack == "":
+        intro= intro + "could be obtained through a redeem code."
+      else:
+        intro= intro + "could be obtained through a redeem code as part of the [[" + pack +"]]."
+      ev = "y"
+      if obt == "":
+        obt ="Redeem code"
+      else:
+        obt = obt + "<br/>Redeem code"
+      cat.append("Redeem Code")
     elif (obtain.lower()=="monthly"):
       intro = intro + "can be obtained as a [[Monthly Sign-In]] reward."
       if obt == "":
